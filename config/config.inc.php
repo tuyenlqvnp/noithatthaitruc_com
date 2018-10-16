@@ -100,7 +100,6 @@ define('_PS_PRICE_DISPLAY_PRECISION_', 2);
 
 
 /* Load all zone/tax relations */
-Tax::loadTaxZones();
 
 /* Loading default country */
 $defaultCountry = new Country(intval(Configuration::get('PS_COUNTRY_DEFAULT')));

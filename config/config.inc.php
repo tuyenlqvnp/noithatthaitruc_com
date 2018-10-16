@@ -16,7 +16,6 @@ header('Content-Type: text/html; charset=utf-8');
 
 /* No settings file? goto installer...*/
 
-include(dirname(__FILE__).'/settings.inc.php');
 
 /* Redefine REQUEST_URI if empty (on some webservers...) */
 if (!isset($_SERVER['REQUEST_URI']) OR empty($_SERVER['REQUEST_URI']))

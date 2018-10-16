@@ -12,11 +12,7 @@ header('Content-Type: text/html; charset=utf-8');
  */
 
 /* Autoload */
-function __autoload($className)
-{
-	if (!class_exists($className, false))
-		require_once(dirname(__FILE__).'/../classes/'.$className.'.php');
-}
+
 
 /* No settings file? goto installer...*/
 if (!file_exists(dirname(__FILE__).'/settings.inc.php'))

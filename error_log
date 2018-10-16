@@ -1,1 +1,0 @@
-[21-Mar-2013 00:13:37] PHP Warning:  htmlentities() [<a href='function.htmlentities'>function.htmlentities</a>]: Invalid multibyte sequence in argument in /home/thaitruc/public_html/tools/smarty/plugins/modifier.escape.php on line 29

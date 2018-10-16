@@ -119,6 +119,5 @@ if (function_exists('date_default_timezone_set'))
 	date_default_timezone_set($timezone);
 
 /* Smarty */
-include(dirname(__FILE__).'/smarty.config.inc.php');
 
 ?>

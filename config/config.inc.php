@@ -97,10 +97,7 @@ define('_PS_PRICE_DISPLAY_PRECISION_', 2);
 
 
 /* Load all configuration keys */
-Configuration::loadConfiguration();
 
-/* Load all language definitions */
-Language::loadLanguages();
 
 /* Load all zone/tax relations */
 Tax::loadTaxZones();

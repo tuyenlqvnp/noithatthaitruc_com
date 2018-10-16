@@ -134,7 +134,6 @@ global $defaultCountry;
 
 /* Load all configuration keys */
 
-
 /* Smarty */
 include(dirname(__FILE__).'/smarty.config.inc.php');
 

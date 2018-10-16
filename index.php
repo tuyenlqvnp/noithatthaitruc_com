@@ -1,8 +1,7 @@
 <?php
 
 
-if(intval(Configuration::get('PS_REWRITING_SETTINGS')) === 1)
-	$rewrited_url = __PS_BASE_URI__;
+
 
 include(dirname(__FILE__).'/header.php');
 

@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="istormvn-webpage.master.cs" Inherits="master_page_istormvn_webpage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>iStormVN</title>
+    <link rel="stylesheet" href="css/blueprint/screen.css"type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="~/css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <asp:ContentPlaceHolder id="cphHead" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="page" class="container">
+        <div id="header">
+            <div id="logo"><img alt="logo" src="images/logo.png" /></div>
+            <div id="menu" class="clearfix">
+                <ul>
+                    <li><a id="nav-home" href="Home.aspx"><b>TRANG CHỦ</b></a></li>
+                    <li><a id="nav-services" href="Services.aspx"><b>DỊCH VỤ</b></a></li>
+                    <li><a id="nav-about-us" href="AboutUs.aspx"><b>GIỚI THIỆU</b></a></li>
+                    <!--<li><a href="tin-tuc.html"><b>TIN TỨC</b></a></li>-->
+                    <li><a id="nav-contact" href="Contact.aspx"><b>LIÊN HỆ</b></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="slideshow" class="span-24">
+            <div id="left-scr"></div>
+            <div id="center-scr"></div>
+            <div id="right-scr"></div>
+        </div>
+        <div id="content" class="span-24">
+            <div class="top-border span-24"></div>
+            <div class="repeat-y-border span-23 last">
+                <asp:ContentPlaceHolder id="cphMainContent" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="bottom-border span-24"></div>
+        </div>
+        <div id="footer" class="span-24">
+            <div id="copyright">Copyright &copy; 2011 <b>iStormVN</b></div>
+        </div>
+    </div>
+</body>
+</html>

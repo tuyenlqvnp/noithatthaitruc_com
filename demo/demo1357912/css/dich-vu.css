@@ -1,0 +1,40 @@
+﻿#content .repeat-y-border
+{
+	padding-left:20px;
+}
+#content .service-img
+{
+	background-color:Aqua;
+}
+#content .service-intro
+{
+	width:255px;
+}
+#content .service
+{
+	/*border-top:solid 1px #d8d8d8;
+	border-left:solid 1px #d8d8d8;*/
+	border-right:solid 1px #d8d8d8;
+	border-bottom:solid 1px #d8d8d8;
+	padding-left:20px;
+	padding-bottom:10px;
+	/*height:200px;*/
+}
+#content .service p
+{
+	font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.7em;
+}
+#content .service h1
+{
+	font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.7em;
+}
+#content .service.last
+{
+	border-right:none;
+}
+#content .service-row.not-first .service
+{
+	margin-top:20px;
+}

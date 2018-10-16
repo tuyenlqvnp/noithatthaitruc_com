@@ -133,6 +133,22 @@ $_MODULES = array();
 global $defaultCountry;
 
 /* Load all configuration keys */
+Configuration::loadConfiguration();
+
+/* Load all language definitions */
+Language::loadLanguages();
+
+/* Load all zone/tax relations */
+Tax::loadTaxZones();
+
+/* Loading default country */
+$defaultCountry = new Country(intval(Configuration::get('PS_COUNTRY_DEFAULT')));
+
+/* Define default timezone */
+$timezone = Tools::getTimezones(Configuration::get('PS_TIMEZONE'));
+
+if (function_exists('date_default_timezone_set'))
+	date_default_timezone_set($timezone);
 
 /* Smarty */
 include(dirname(__FILE__).'/smarty.config.inc.php');

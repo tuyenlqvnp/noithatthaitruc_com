@@ -1,7 +1,9 @@
 <?php
 
 /* Improve PHP configuration to prevent issues */
-
+@ini_set('display_errors', 'off');
+@ini_set('upload_max_filesize', '100M');
+@ini_set('default_charset', 'utf-8');
 
 /* Correct Apache charset */
 header('Content-Type: text/html; charset=utf-8');
@@ -11,21 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
  * This will generate a PHP Strict Standards notice. To fix it up, uncomment the following line.
  */
 
-/* Autoload */
 
-
-/* No settings file? goto installer...*/
-
-
-/* Redefine REQUEST_URI if empty (on some webservers...) */
-if (!isset($_SERVER['REQUEST_URI']) OR empty($_SERVER['REQUEST_URI']))
-{
-	$_SERVER['REQUEST_URI'] = $_SERVER['SCRIPT_NAME'];
-	if (isset($_SERVER['QUERY_STRING']) AND !empty($_SERVER['QUERY_STRING']))
-		$_SERVER['REQUEST_URI'] .= '?'.$_SERVER['QUERY_STRING'];
-}
-
-$currentDir = dirname(__FILE__);
 
 /* Base and themes */
 define('_THEMES_DIR_',     __PS_BASE_URI__.'themes/');
@@ -50,7 +38,6 @@ define('_PS_IMG_',         __PS_BASE_URI__.'img/');
 define('_PS_ADMIN_IMG_',   _PS_IMG_.'admin/');
 
 /* Directories */
-define('_PS_ROOT_DIR_',             realpath($currentDir.'/..'));
 define('_PS_CLASS_DIR_',            _PS_ROOT_DIR_.'/classes/');
 define('_PS_TRANSLATIONS_DIR_',     _PS_ROOT_DIR_.'/translations/');
 define('_PS_DOWNLOAD_DIR_',         _PS_ROOT_DIR_.'/download/');
@@ -84,13 +71,7 @@ define('_PS_MYSQL_REAL_ESCAPE_STRING_', function_exists('mysql_real_escape_strin
 define('_PS_TRANS_PATTERN_',            '(.*[^\\\\])');
 define('_PS_MIN_TIME_GENERATE_PASSWD_', '360');
 
-/* aliases */
-function p($var) {
-	Tools::p($var);
-}
-function d($var) {
-	Tools::d($var);
-}
+
 
 /* Order states */
 define('_PS_OS_CHEQUE_',      1);
@@ -113,31 +94,5 @@ define('PS_BOTH_TAX', 2);
 define('_PS_PRICE_DISPLAY_PRECISION_', 2);
 
 
-global $_MODULES;
-$_MODULES = array();
-
-/* Globals */
-global $defaultCountry;
-
-/* Load all configuration keys */
-Configuration::loadConfiguration();
-
-/* Load all language definitions */
-Language::loadLanguages();
-
-/* Load all zone/tax relations */
-Tax::loadTaxZones();
-
-/* Loading default country */
-$defaultCountry = new Country(intval(Configuration::get('PS_COUNTRY_DEFAULT')));
-
-/* Define default timezone */
-$timezone = Tools::getTimezones(Configuration::get('PS_TIMEZONE'));
-
-if (function_exists('date_default_timezone_set'))
-	date_default_timezone_set($timezone);
-
-/* Smarty */
-include(dirname(__FILE__).'/smarty.config.inc.php');
 
 ?>

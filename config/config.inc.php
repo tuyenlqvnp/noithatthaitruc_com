@@ -94,11 +94,7 @@ define('PS_BOTH_TAX', 2);
 define('_PS_PRICE_DISPLAY_PRECISION_', 2);
 
 
-global $_MODULES;
-$_MODULES = array();
 
-/* Globals */
-global $defaultCountry;
 
 /* Load all configuration keys */
 Configuration::loadConfiguration();
